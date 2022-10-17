@@ -1,0 +1,9 @@
+name: "Send notification to Google Chat room"
+description: "Given the result of a job it will notify to Google Chat"
+inputs:
+  google_chat_url:
+    description: "Google chat webhook URL"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"

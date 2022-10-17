@@ -1,0 +1,17 @@
+name: CI
+
+on: push
+
+jobs:
+  run-linters:
+    runs-on: ubuntu-latest
+    container: alpine:3.16
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: Install shellcheck
+        run: apk --update add shellcheck
+
+      - name: Run shellcheck
+        run: shellcheck --version && shellcheck entrypoint.sh
